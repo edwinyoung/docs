@@ -54,7 +54,7 @@ var verifier = base64URLEncode(crypto.randomBytes(32));</code></pre>
 <code class="java hljs">SecureRandom sr = new SecureRandom();
 byte[] code = new byte[32];
 sr.nextBytes(code);
-String verifier = Base64.encodeToString(code, Base64.URL_SAFE | Base64.NO_WRAP | Base64.NO_PADDING);</code></pre>
+String verifier = Base64.getUrlEncoder().withoutPadding().encodeToString(code);</code></pre>
     </div>
     <div id="verifier-swift" class="tab-pane">
       <pre>
